@@ -1,34 +1,43 @@
-
-//Write a program to implement binary search.
-
-function binarySearch(arr, target) {
-    let low = 0;
-    let high = arr.length - 1;
+//Binary Search
+class search
+{
   
-    while (low <= high) {
-      const mid = Math.floor((low + high) / 2);
-  
-      if (arr[mid] === target) {
-        return mid; 
-      } else if (arr[mid] < target) {
-        low = mid + 1;
-      } else {
-        high = mid - 1;
-      }
+    binary_search (arr, key) 
+    {
+       
+        var low=0, high=arr.length-1;
+        var flag=0;
+              
+        while (low<=high)
+        {
+      
+            // Find the mid index
+            var mid=Math.floor((low+high)/2);
+            // If element is present at mid, return True
+            if (arr[mid]==key) 
+            {
+              console.log("Element found!");
+              flag=1;
+              break;
+            }
+            // Else look in left or right half accordingly
+            else if (arr[mid] < key) 
+                 low = mid + 1;
+            else
+                 high = mid - 1;
+        }
+        if(flag==0)
+          console.log("Element not found!");
+        
     }
-  
-    return -1; 
-  }
-  
-  
-  const sortedArray = [1, 3, 5, 7, 9, 11, 13, 15];
-  const targetElement = 7;
-  
-  const result = binarySearch(sortedArray, targetElement);
-  
-  if (result !== -1) {
-    console.log(`Element ${targetElement} found at index ${result}.`);
-  } else {
-    console.log(`Element ${targetElement} not found in the array.`);
-  }
-  
+}
+   
+// Execute binary search
+var s=new search();
+var arr = [1, 3, 5, 7, 8, 9];
+var key = 7;
+s.binary_search(arr, key);
+   
+
+   
+

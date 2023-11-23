@@ -1,6 +1,3 @@
-
-//Write a program to implement Rain Terrace problem.
-
 class rain_terrace
 {
     maxWater(arr)

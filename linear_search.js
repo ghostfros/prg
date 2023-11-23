@@ -1,24 +1,35 @@
-
-//Write a program to implement linear search.
-
-function linearSearch(arr, target) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === target) {
-        return i; 
-      }
+//Linear Search
+class search
+{
+  
+    linear_search (arr, key) 
+    {
+       
+        var len=arr.length;
+        var flag=0;
+        for(var i=0;i<len;i++)
+        {
+      
+            if (arr[i]==key) 
+            {
+              console.log("Element found!");
+              flag=1;
+              break;
+            }
+            
+        }
+        if(flag==0)
+          console.log("Element not found!");
+        
     }
-    return -1;
-  }
-  
-  
-  const array = [2, 5, 7, 1, 9, 3];
-  const targetElement = 7;
-  
-  const result = linearSearch(array, targetElement);
-  
-  if (result !== -1) {
-    console.log(`Element ${targetElement} found at index ${result}.`);
-  } else {
-    console.log(`Element ${targetElement} not found in the array.`);
-  }
-  
+}
+   
+// Execute Linear search
+var s=new search();
+var arr = [1, 3, 5, 7, 8, 9];
+var key = 8;
+s.linear_search(arr, key);
+   
+
+   
+

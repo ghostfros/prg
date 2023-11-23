@@ -1,0 +1,18 @@
+
+function print_pascal(n)
+{
+  var C=[ ];
+	console.log("1") ;// line 0
+	for (line = 1; line < n; line++)
+  {
+  		C[0]=1;
+  		console.log(C[0]);
+  		for (i = 1; i <= line; i++)
+  		{
+           	C[i]= C[i-1]*(line - i +1)/ i;
+  			    console.log(C[i]);
+  		}
+  		console.log("");
+  }
+}
+print_pascal(6);

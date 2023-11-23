@@ -1,0 +1,33 @@
+class max_subarray
+{
+  max_subarray_sum(arr)
+  {
+    var max_sum=arr[0];
+    var subarr=new Array();
+   
+    var flag=0;
+    for(var i=0;i<arr.length;i++)
+    {
+      var sum=0;
+      var k=0;
+      for(var j=i;j<arr.length;j++)
+      {
+        subarr[k++]=arr[j];
+        sum=sum+arr[j];
+        if(sum>max_sum)
+        {
+          max_sum=sum;
+          console.log("Array with maxsum :");
+          for(var p=0;p<k;p++)
+            console.log(subarr[p]);
+        }
+      }
+    }
+    console.log("Maximum sum: "+max_sum);
+    
+      
+  }
+}
+var m=new max_subarray();
+var arr=[-3,4,5,-6,-10,1];
+m.max_subarray_sum(arr);

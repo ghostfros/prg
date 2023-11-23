@@ -1,7 +1,5 @@
 
-//Write a program to implement Merge Sort.
-
-var arr = [15,3,7,6,2,9,69,4,99];
+var arr = [15,3,7,6,2,9, 4, 100];
 var b = new Array();
 var length=arr.length;
 merge_sort(arr,0,length-1);

@@ -1,6 +1,3 @@
-
-//Write a program to implement Quick Sort.
-
 var items = [5,3,7,6,2,9];
 function swap(items, l, h){
     var temp = items[l];
