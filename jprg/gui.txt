@@ -1,0 +1,240 @@
+//Creating Frame using Frame object package com.gui.program; import java.awt.*;
+public class FrameDemo {
+
+public static void main(String[] args) { Frame f = new Frame(); f.setVisible(true); f.setBackground(Color.green); f.setSize(400,300);
+f.setTitle("My First Frame"); f.setLayout(new FlowLayout()); Label l1 = new Label("Username"); Label l2 = new Label("Password"); TextField t1 = new TextField(20); TextField t2 = new TextField(20); t2.setEchoChar('*');
+Button b =new Button ("Login");
+
+Label l3 = new Label("Technologies "); Label l4 = new Label("cities ");
+List ll = new List(2,true); ll.add("C");
+ll.add("C++");
+
+ll.add("Java");
+
+Choice c = new Choice(); c.add("Nagpur");
+ 
+c.add("Pune");
+
+c.add("Goa"); f.add(l1);
+f.add(t1);
+
+f.add(l2);
+
+f.add(t2);
+
+f.add(b);
+
+f.add(l3);
+
+f.add(ll);
+
+f.add(l4);
+
+f.add(c);
+
+}
+
+}
+
+Output:
+
+ 
+
+
+
+
+
+
+//Event handling
+//WindowListener
+package com.gui.program;
+
+
+
+import java.awt.Color; import java.awt.Frame;
+import java.awt.event.WindowAdapter; import java.awt.event.WindowEvent; import java.awt.event.WindowListener; class MyFrame extends Frame{
+
+
+MyFrame()
+
+{
+
+this.setVisible(true); this.setSize(700,400); this.setBackground(Color.cyan); this.addWindowListener(new WindowAdapter()
+{
+
+public void windowClosing(WindowEvent e) { System.exit(0);
+}});
+
+
+
+
+
+}
+ 
+}
+
+public class WinodwListenerDemo {
+
+public static void main(String[] args) { MyFrame f = new MyFrame();
+}
+
+
+
+}
+
+Output:
+Window Closing
+
+
+
+
+
+
+
+// MouseListener
+package com.gui.program;
+
+
+import java.awt.Color;
+import java.awt.FlowLayout; import java.awt.Frame;
+import java.awt.event.MouseEvent; import java.awt.event.MouseListener;
+
+class MouseListenerImp implements MouseListener{
+
+
+@Override
+public void mouseClicked(MouseEvent e) {
+
+
+System.out.println("Mouse Clicked [ "+e.getX()+","+e.getY()+"]");
+}
+
+
+@Override
+ 
+public void mousePressed(MouseEvent e) {
+System.out.println("Mouse Pressed [ "+e.getX()+","+e.getY()+"]");
+}
+
+
+@Override
+public void mouseReleased(MouseEvent e) {
+System.out.println("Mouse Released [ "+e.getX()+","+e.getY()+"]");
+
+}
+
+
+@Override
+public void mouseEntered(MouseEvent e) {
+System.out.println("Mouse Entered [ "+e.getX()+","+e.getY()+"]");
+}
+
+
+@Override
+public void mouseExited(MouseEvent e) {
+System.out.println("Mouse Exited [ "+e.getX()+","+e.getY()+"]");
+}
+
+
+}
+
+
+class MyFrame1 extends Frame
+{
+MyFrame1()
+{
+this.setVisible(true); this.setSize(700,400);
+this.setBackground(Color.orange); this.setLayout(new FlowLayout());
+ 
+this.addMouseListener(new MouseListenerImp());
+
+
+}
+}
+public class MouseListenerDemo {
+
+
+public static void main(String[] args) {
+
+
+MyFrame1 mf = new MyFrame1();
+}
+
+
+}
+Output:
+Mouse Entered [ 350,54] Mouse Exited [ 698,134] Mouse Entered [ 692,138] Mouse Exited [ 693,137] Mouse Entered [ 662,222] Mouse Exited [ 857,324] Mouse Entered [ 670,324] Mouse Pressed [ 350,165] Mouse Released [ 350,165] Mouse Clicked [ 350,165] Mouse Pressed [ 237,168]
+
+
+
+
+
+
+ 
+// KeyListener
+package com.gui.program;
+
+
+import java.awt.Frame;
+import java.awt.event.KeyEvent; import java.awt.event.KeyListener;
+
+class KeyListenerImpl implements KeyListener{
+
+
+@Override
+public void keyTyped(KeyEvent e) {
+
+
+System.out.println("Key Typed : "+e.getKeyChar());
+}
+
+
+@Override
+public void keyPressed(KeyEvent e) {
+System.out.println("Key Pressed : "+e.getKeyChar());
+}
+
+
+@Override
+public void keyReleased(KeyEvent e) {
+System.out.println("Key Released : "+e.getKeyChar());
+}
+
+
+
+}
+class MyFrame2 extends Frame
+{
+ 
+MyFrame2()
+{
+this.setVisible(true); this.setSize(400,300);
+this.addKeyListener(new KeyListenerImpl());
+
+
+}
+}
+
+
+public class keyListenerDemo {
+
+
+public static void main(String[] args) {
+
+
+//MyFrame2 mf = new MyFrame2();
+new MyFrame2(); // anonymous object or Nameless object
+}
+
+
+}
+
+Output:
+
+Key Pressed : d Key Typed : d Key Pressed : f Key Typed : f Key Released : d Key Released : f Key Pressed : f Key Typed : f Key Pressed : d
+ 
+// Swing
+package com.gui.program; import javax.swing.JFrame; public class swingDemo {
+public static void main(String[] args) { JFrame f = new JFrame(); f.setVisible(true);
+f.setSize(300,300);
+
